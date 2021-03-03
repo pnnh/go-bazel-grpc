@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	"example_module/gen/foo"
+	"example_module/protoz"
 	"google.golang.org/grpc"
 )
 
@@ -20,7 +20,7 @@ func (s *Server) Add(ctx context.Context, in *foo.AddIn) (*foo.AddOut, error) {
 func Start(addr string, port int) error {
 	lis, err := net.Listen("tcp", fmt.Sprintf("0.0.0.0:%d", port))
 	if err != nil {
-		log.Println("main", "failed to listen: %v", err)
+		log.Println("main", "failed to listen22: %v", err)
 		return nil
 	}
 	serv := &Server{}
